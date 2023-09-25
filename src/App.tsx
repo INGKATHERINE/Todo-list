@@ -247,6 +247,7 @@ const App: React.FC = () => {
                     placeholder="Buscar"
                     value={buscar}
                     onChange={(evento)=>{setBuscar(evento.target.value)}}
+                    onPressEnter={onSearch}
                 />
             </div>
         </Col>
