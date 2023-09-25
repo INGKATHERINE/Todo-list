@@ -15,6 +15,7 @@ const App: React.FC = () => {
     color: string;
     isCompleted:boolean
   }
+  
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedColor, setSelectedColor] = useState("#ffffff");
   const [titulo,setTitulo] = useState("");
@@ -143,6 +144,8 @@ const App: React.FC = () => {
       ));
   })}
 
+  
+
   const Eliminar = (id: number) => {
     fetch('https://jsonplaceholder.typicode.com/posts/'+ id, {
       method: 'DELETE',
@@ -237,18 +240,18 @@ const App: React.FC = () => {
           </div>
         </Col>
         <Col xs={24} sm={12} md={8} style={{marginBottom: 16,marginLeft: 20,}} className="gutter-row" span={6}>
-          <div>
-            <p>Buscar Descripción:</p>
-            <Input
-              style={{ width: 200 }}
-              placeholder="Buscar"
-              value={buscar}
-              onChange={(evento)=>{setBuscar(evento.target.value)}}
-            />
-          </div>
+            <div>
+                <p>Buscar Descripción:</p>
+                <Input
+                    style={{ width: 200 }}
+                    placeholder="Buscar"
+                    value={buscar}
+                    onChange={(evento)=>{setBuscar(evento.target.value)}}
+                />
+            </div>
         </Col>
         <Col span={6} style={{marginBottom: 16,marginLeft: 20,marginTop: 25,}}>
-            <Button onClick={onSearch} icon={<SearchOutlined />}>Buscar:</Button>
+            <Button onClick={onSearch} icon={<SearchOutlined />}>Buscar</Button>
         </Col>
       </Row>
       <Row  style={{ backgroundColor: '#DCDCDC'}} >

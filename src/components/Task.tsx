@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Button, Input, Checkbox } from 'antd';
+import { Card, Button, Input, Checkbox, Alert } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons'; 
 import { blob } from 'stream/consumers';
 import './Task.css'; 
@@ -33,6 +33,13 @@ const Tarjeta = ({id, titulo, descripcion, color, isCompleted, onEdit, onComplet
         className="card"
         style={{  justifyContent: 'space-around',width: 300, marginBottom: 16, marginLeft: 10, marginTop: 20, backgroundColor: color,  }}  
         >
+        <>
+                {isCompleted ? (
+                    <Alert message="Completado" type="success" />
+                ) : (
+                    <Alert message="En proceso" type="warning" />
+                )}
+        </>
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <div style={{ marginRight: '8px' }}>
                 <Button icon={<EditOutlined />} onClick={() => setIsEditing(true)} />
@@ -41,6 +48,7 @@ const Tarjeta = ({id, titulo, descripcion, color, isCompleted, onEdit, onComplet
                 <Input value={editedTitle} onChange={(e) => setEditedTitle(e.target.value)} />
             ) : (
                 <p>{titulo}</p>
+                
             )}
         </div>
         {isEditing ? (
