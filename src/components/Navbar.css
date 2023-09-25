@@ -1,0 +1,18 @@
+.custom-header {
+    border-radius: 10px; /* Agrega un borde redondeado */
+    border: 1px solid #fff; /* Agrega una línea negra */
+  }
+  
+  .header-title {
+    color: #000;
+  }
+  
+  /* .user-info {
+    display: flex;
+    align-items: center;
+  } */
+  
+  .user-info span {
+    margin-right: 10px;
+    color: #fff;
+  }
